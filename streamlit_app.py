@@ -15,7 +15,7 @@ st.set_page_config(page_title="RAG Ingest PDF", page_icon="📄", layout="center
 
 @st.cache_resource
 def get_inngest_client() -> inngest.Inngest:
-    return inngest.Inngest(app_id="rag_app", isproduction=False)
+    return inngest.Inngest(app_id="rag_app", is_production=False)
 
 
 def save_uploaded_pdf(file) -> Path:
@@ -123,4 +123,3 @@ with st.form("rag_query_form"):
             st.caption("Sources")
             for s in sources:
                 st.write(f"- {s}")
-
